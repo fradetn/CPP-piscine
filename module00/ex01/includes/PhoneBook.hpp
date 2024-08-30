@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:45:39 by nfradet           #+#    #+#             */
-/*   Updated: 2024/06/17 23:31:19 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/08/30 16:49:14 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ public:
 	PhoneBook(void);
 	~PhoneBook(void);
 
-	// Contact createContact(void);
+	void search(void);
 	void addContact(void);
-	// size_t getNbContact(void);
+	int getNbContact(void);
 
 private:
 
 	int	i;
+	int	nbContact;
 	Contact contact[8];
 };
 

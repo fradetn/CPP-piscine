@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:47:07 by nfradet           #+#    #+#             */
-/*   Updated: 2024/06/18 00:02:09 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/08/30 17:18:38 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 PhoneBook::PhoneBook(void){
 	this->i = 0;
+	this->nbContact = 0;
 	std::cout << "constructor PhoneBook" << std::endl;
 	return;
 }
@@ -23,36 +24,48 @@ PhoneBook::~PhoneBook(void){
 	return;
 }
 
+int PhoneBook::getNbContact(void){
+	
+	return (this->nbContact);
+}
+
 void PhoneBook::addContact(void)
 {
-	Contact person;
 	std::string s;
-
+	if (this->i == 8)
+		i = 0;
 	std::cout << "Entrez les informations suivantes :" << std::endl;
 	std::cout << "First name : ";
 	getline(std::cin, s);
-	person.setFirstName(s);
+	this->contact[this->i].setFirstName(s);
 	std::cout << "Last name : ";
 	getline(std::cin, s);
-	person.setLastName(s);
+	this->contact[this->i].setLastName(s);
 	std::cout << "Nick name : ";
 	getline(std::cin, s);
-	person.setNickName(s);
+	this->contact[this->i].setNickName(s);
 	std::cout << "Phone number : ";
 	getline(std::cin, s);
-	person.setPhoneNumber(s);
+	this->contact[this->i].setPhoneNumber(s);
 	std::cout << "darkest secret : ";
 	getline(std::cin, s);
-	person.setDarkestSecret(s);
-	if (this->i < 8)
-		this->contact[this->i] = person;
-
+	this->contact[this->i].setDarkestSecret(s);
+	this->i++;
+	this->nbContact++;
 }
 
-// size_t PhoneBook::getNbContact(void){
-// 	size_t len;
+void PhoneBook::search(void){
+	int i = 0;
+	
+	std::cout << "     INDEX|FIRST NAME| LAST NAME|  NICKNAME" << std::endl;
+	while (i < this->nbContact){
 
-// 	len = sizeof(this->contact) / sizeof(this->contact[0]);
-// 	std::cout << "len de contact = " << len << std::endl;
-// 	return (len);
-// }
+		std::cout << "----------|----------|----------|----------" << std::endl;
+		std::cout << "         " + std::to_string(i) + "|";
+		//utilisation de la fonction "setw()"
+		
+		i++;
+	}
+	// std::cout << "          |          |          " << std::endl;
+
+}
