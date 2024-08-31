@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 18:07:22 by nfradet           #+#    #+#             */
-/*   Updated: 2024/06/17 19:48:48 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/08/31 19:36:18 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	main(int argc, char **argv){
 	else{
 		i = 1;
 		while (argv[i]){
-
 			s = argv[i];
 			std::cout << std::uppercase << s;
 			i++;

@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:52:50 by nfradet           #+#    #+#             */
-/*   Updated: 2024/06/17 22:56:38 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/08/31 19:32:08 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 #include "../includes/Contact.hpp"
 
 Contact::Contact(void){
-	std::cout << "constructor Contact" << std::endl;
+	// std::cout << "constructor Contact" << std::endl;
 	return;
 }
 
 Contact::~Contact(void){
-	std::cout << "Destructor Contact" << std::endl;
+	// std::cout << "Destructor Contact" << std::endl;
 	return;
 }
 
