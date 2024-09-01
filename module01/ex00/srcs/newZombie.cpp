@@ -1,42 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 19:45:39 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/01 23:44:55 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/01 23:53:34 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/02 00:20:35 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#include "../includes/Zombie.hpp"
 
-#include "Contact.hpp"
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-
-class PhoneBook {
-
-public:
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void search(void);
-	void tabContact(void);
-	void addContact(void);
-	int getNbContact(void);
-
-private:
-
-	int	i;
-	int	nbContact;
-	Contact contact[8];
-};
-
-
-#endif 
-
+Zombie *newZombie(std::string name) {
+	Zombie *zomb = new Zombie(name);
+	return (zomb);
+}

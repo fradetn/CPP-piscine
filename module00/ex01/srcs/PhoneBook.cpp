@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:47:07 by nfradet           #+#    #+#             */
-/*   Updated: 2024/08/31 19:32:14 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/01 23:20:24 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,6 +118,7 @@ void PhoneBook::addContact(void) {
 	if (this->nbContact < 8)
 		this->nbContact++;
 }
+
 static void affStr(std::string str) {
 	std::string substr;
 	if (str.length() > 10)

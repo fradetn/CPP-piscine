@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 19:45:39 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/01 23:44:55 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/02 00:03:09 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/02 00:31:56 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#include "../includes/Zombie.hpp"
 
-#include "Contact.hpp"
-#include <iostream>
-#include <iomanip>
-#include <sstream>
+Zombie::Zombie(std::string name) {
+	this->name = name;
+	std::cout << "\e[0;32mCreating <" << this->name << ">\e[0;0m"<<std::endl;
+	return ;
+}
+Zombie::~Zombie(void) {
+	std::cout << "\e[0;31mDestroying <" << this->name << ">\e[0;0m"<<std::endl;
+	return ;
+}
 
-class PhoneBook {
-
-public:
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void search(void);
-	void tabContact(void);
-	void addContact(void);
-	int getNbContact(void);
-
-private:
-
-	int	i;
-	int	nbContact;
-	Contact contact[8];
-};
-
-
-#endif 
-
+void Zombie::announce(void) {
+	std::cout << this->name + ":  BraiiiiiiinnnzzzZ..." << std::endl;
+}

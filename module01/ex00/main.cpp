@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 19:45:39 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/01 23:44:55 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/01 23:36:38 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/02 00:34:28 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#include "includes/Zombie.hpp"
 
-#include "Contact.hpp"
-#include <iostream>
-#include <iomanip>
-#include <sstream>
+void	randomChump(std::string name);
+Zombie	*newZombie(std::string name);
 
-class PhoneBook {
+int main()
+{
+	Zombie *newZomb;
 
-public:
-
-	PhoneBook(void);
-	~PhoneBook(void);
-
-	void search(void);
-	void tabContact(void);
-	void addContact(void);
-	int getNbContact(void);
-
-private:
-
-	int	i;
-	int	nbContact;
-	Contact contact[8];
-};
-
-
-#endif 
-
+	randomChump("RandomChump");
+	newZomb = newZombie("NewZombie");
+	newZomb->announce();
+	delete newZomb;
+	return 0;
+}
