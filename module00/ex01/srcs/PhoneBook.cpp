@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:47:07 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/01 23:20:24 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/02 02:35:19 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,18 +132,15 @@ static bool	checkFormatIndex(std::string str, int nbContact) {
 	int	index;
 	if (str.empty())
 		return (false);
-
+	if (str.length() != 1)
+		return (false);
 	for (char c : str){
-		if (!std::isdigit(c)){
-			std::cout << std::endl << "\e[31m/!\\ Format incorrect /!\\\e[0m" << std::endl;
+		if (!std::isdigit(c))
 			return (false);
-		}
 	}
 	index = std::stoi(str);
-	if (index < 1 || index > nbContact){
-		std::cout << std::endl << "\e[31m/!\\ Entrez un nombre entre 1 et " << nbContact << " (compris) /!\\\e[0m" << std::endl;
+	if (index < 1 || index > nbContact)
 		return (false);
-	}
 	return (true);
 }
 
@@ -176,6 +173,7 @@ void PhoneBook::search(void) {
 	std::cout << std::endl << "\e[32mSelectionnez un numero de contact :\e[0m" << std::endl;
 	getline(std::cin, str);
 	while (checkFormatIndex(str, this->nbContact) == false){
+		std::cout << std::endl << "\e[31m/!\\ Entrez un nombre entre 1 et " << nbContact << " (compris) /!\\\e[0m" << std::endl;
 		std::cout << "\e[32mSelectionnez un numero de contact :\e[0m" << std::endl;
 		getline(std::cin, str);
 	}
