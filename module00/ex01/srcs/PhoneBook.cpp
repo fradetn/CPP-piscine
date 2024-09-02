@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 19:47:07 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/02 02:35:19 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/02 02:59:27 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,7 +125,7 @@ static void affStr(std::string str) {
 		substr = str.substr(0, 9) + ".";
 	else
 		substr = str;
-	std::cout << std::setw(10) << std::right << substr << "|";
+	std::cout << std::setw(10) << substr << "|";
 }
 
 static bool	checkFormatIndex(std::string str, int nbContact) {

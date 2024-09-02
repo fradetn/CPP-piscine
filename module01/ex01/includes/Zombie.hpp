@@ -1,10 +1,10 @@
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-#include <iostream>
-#include <iomanip>
-#include <sstream>
-#include <string>
+# include <iostream>
+# include <iomanip>
+# include <sstream>
+# include <string>
 
 class Zombie {
 
