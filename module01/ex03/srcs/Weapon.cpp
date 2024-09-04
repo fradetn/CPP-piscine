@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Weapon.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 02:39:42 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/02 21:25:48 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/02 14:36:59 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/03 18:09:18 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include "../includes/Weapon.hpp"
 
-#include "Zombie.hpp"
+Weapon::Weapon(const std::string &type): type(type) {
+}
 
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-Zombie	*zombieHorde(int N, std::string name);
+Weapon::~Weapon(void) {
+}
 
-#endif
+const std::string &Weapon::getType(void) const{
+	return (this->type);
+}
+
+void	Weapon::setType(const std::string &newtype){
+	this->type = newtype;
+}

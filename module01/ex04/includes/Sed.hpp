@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.h                                           :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/02 02:39:42 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/02 21:25:48 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/04 01:08:47 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/04 16:46:16 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
+#include <string>
+#include <iostream>
+#include <fstream>
 
-#include "Zombie.hpp"
+class Sed
+{
+private:
+	std::string fileIn;
+	std::string fileOut;
+	
+public:
+	Sed(std::string filename);
+	~Sed();
 
-void	randomChump(std::string name);
-Zombie	*newZombie(std::string name);
-Zombie	*zombieHorde(int N, std::string name);
+	void	replace(std::string toFind, std::string toReplace);
+};
 
-#endif
