@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/05 16:27:22 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/05 16:27:22 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/05 16:32:28 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/05 16:38:43 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#include "includes/Harl.hpp"
 
-#include <string>
-#include <iostream>
+int main(int argc, char **argv) {
+	Harl h;
 
-class Harl {
-
-private:
-	void debug(void);
-	void info(void);
-	void warning(void);
-	void error(void);
-public:
-	Harl(/* args */);
-	~Harl();
-
-	void complain(std::string level);
-};
-
-typedef void (Harl::*funcHarl_t)(void);
-
-#endif
+	if (argc != 2) {
+		std::cout << "Invalid arguments number (1 argument needed)" << std::endl;
+		return (1);
+	}
+	h.complain(argv[1]);
+	return (0);
+}
