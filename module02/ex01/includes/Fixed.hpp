@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/09 15:24:44 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/09 15:25:02 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/09 15:50:03 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/09 15:51:23 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "includes/Fixed.hpp"
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
-int main( void ) {
-    Fixed a;
-    Fixed b( a );
-    Fixed c;
-    c = b;
-    std::cout << a.getRawBits() << std::endl;
-    std::cout << b.getRawBits() << std::endl;
-    std::cout << c.getRawBits() << std::endl;
-    return 0;
-}
+#include <iostream>
+#include <string>
+#include <cmath>
+
+class Fixed
+{
+private:
+	int number;
+	static int const bits = 8;
+
+public:
+	Fixed(void);
+	Fixed(int const raw);
+	Fixed(Fixed const & src);
+	~Fixed();
+
+	Fixed &	operator=(Fixed const & rhs);
+
+	int	getRawBits(void) const;
+	void	setRawBits(int const raw);
+};
+
+#endif

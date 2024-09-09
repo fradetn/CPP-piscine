@@ -1,4 +1,4 @@
-NAME		=	harl
+NAME		=	fixed
 
 CC			=	clang++
 INCLUDES	=	INCLUDES
@@ -6,7 +6,7 @@ CPPFLAGS	=	-Wall -Werror -Wextra -I$(INCLUDES)
 RM			=	rm -rf
 
 SRCS		=	main.cpp	\
-				Harl.cpp
+				Fixed.cpp
 
 all:	$(NAME)
 
