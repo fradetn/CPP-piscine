@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:51:03 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/09 15:51:06 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/12 20:12:29 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@ Fixed::Fixed(void) {
 Fixed::Fixed(Fixed const& src) {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
+}
+
+Fixed::Fixed(int const raw) {
+
+}
+Fixed::Fixed(float const raw){
+
 }
 
 Fixed::~Fixed() {
@@ -39,4 +46,11 @@ int	Fixed::getRawBits(void) const {
 
 void Fixed::setRawBits(int const raw) {
 	this->number = raw;
+}
+
+float Fixed::toFloat(void) const {
+
+}
+int Fixed::toInt( void ) const {
+	
 }
