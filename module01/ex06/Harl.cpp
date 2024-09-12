@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 15:03:45 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/05 16:42:12 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/12 19:42:54 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,18 +44,29 @@ void Harl::error(void) {
 }
 
 void Harl::complain(std::string level) {
-	funcHarl_t func_tab[4] = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	std::string levels_tab[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	int i = 0;
 
-	while (i <= 4 && levels_tab[i].compare(level))
+	while (i < 4 && levels_tab[i].compare(level))
 		i++;
-	while (i < 4) {
-		(this->*func_tab[i])();
-		std::cout << std::endl;
-		i++;
+	switch (i)
+	{
+		case 4:
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+			break;
+		case 0:
+			this->debug();
+			std::cout << std::endl;
+		case 1:
+			this->info();
+			std::cout << std::endl;
+		case 2:
+			this->warning();
+			std::cout << std::endl;
+		case 3:
+			this->error();
+			std::cout << std::endl;	
+		default:
+			break;
 	}
-	if (i == 5)
-		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-
 }

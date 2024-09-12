@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 16:27:17 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/05 16:42:22 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/12 19:40:34 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ public:
 
 	void complain(std::string level);
 };
-
-typedef void (Harl::*funcHarl_t)(void);
 
 #endif
