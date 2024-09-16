@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:50:03 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/12 20:06:37 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/14 21:16:27 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,6 @@ public:
 	void	setRawBits(int const raw);
 };
 
-	Fixed & operator<<(std::ostream &os, Fixed const & obj);	// Surcharge externe de l'operateur d'insertion '>>'
+std::ostream& operator<<(std::ostream &os, Fixed const & obj);	// Surcharge externe de l'operateur d'insertion '>>'
 
 #endif
