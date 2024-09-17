@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:50:03 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/17 16:36:18 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/17 17:32:45 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,36 @@ public:
 	Fixed(Fixed const & src);				// Constructeur de copie
 	~Fixed();								// Destructeur
 
+	/*		Surcharges		*/
 	Fixed &	operator=(Fixed const & rhs);	// Surcharge de l'operateur d'affectation '='
+	
+	Fixed operator+(Fixed const & rhs) const;
+	Fixed operator-(Fixed const & rhs) const;
+	Fixed operator*(Fixed const & rhs) const;
+	Fixed operator/(Fixed const & rhs) const;
+
+	bool operator>(Fixed const & rhs) const;
+	bool operator<(Fixed const & rhs) const;
+	bool operator>=(Fixed const & rhs) const;
+	bool operator<=(Fixed const & rhs) const;
+	bool operator==(Fixed const & rhs) const;
+	bool operator!=(Fixed const & rhs) const;
+
+	Fixed & operator++();
+	Fixed operator++(int);
+	Fixed & operator--();
+	Fixed operator--(int);
+
 
 	float toFloat(void) const;
 	int toInt( void ) const;
 	int	getRawBits(void) const;
 	void	setRawBits(int const raw);
+
+	static Fixed & min(Fixed & a, Fixed & b);
+	static Fixed const & min(Fixed const & a, Fixed const & b);
+	static Fixed & max(Fixed & a, Fixed & b);
+	static Fixed const & max(Fixed const & a, Fixed const & b);
 };
 
 std::ostream& operator<<(std::ostream &os, Fixed const & obj);	// Surcharge externe de l'operateur d'insertion '>>'
