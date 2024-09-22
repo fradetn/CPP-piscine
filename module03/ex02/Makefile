@@ -14,6 +14,8 @@ OBJ_DIR	=	obj/
 # .cpp and .o files
 
 SRC		 =		ClapTrap.cpp \
+				ScavTrap.cpp \
+				FragTrap.cpp \
 				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)

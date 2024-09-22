@@ -1,6 +1,6 @@
 
 # Name of the program
-NAME	=	prog
+NAME	=	trap
 INC		=	-I./includes
 
 # Flags
