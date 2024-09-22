@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 08:12:18 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/22 17:43:11 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/22 17:08:12 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/22 17:51:13 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Dog.hpp"
 
-#include <iostream>
-#include <string>
+Dog::Dog(void){
+	this->type = "Dog";
+	std::cout << "Dog constructor" << std::endl;
+}
+Dog::Dog(Dog const &src) {
+	*this = src;
+}
+Dog::~Dog() {
+	std::cout << "Dog destructor" << std::endl;	
+}
 
-class Animal {
- 
-protected:
-	std::string type;
+Dog &Dog::operator=(Dog const &rhs) {
+	this->type = rhs.getType();
+	return (*this);
+}
 
-public:
-	Animal(void);
-	Animal(Animal const &src);
-	virtual ~Animal();
-
-	std::string const &getType() const;
-	Animal &operator=(Animal const &rhs);
-
-	virtual void makeSound() const;
-};
-
-
-#endif
+void Dog::makeSound() const{
+	std::cout << "Wouf !" << std::endl;
+}

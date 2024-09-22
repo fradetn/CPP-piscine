@@ -1,6 +1,6 @@
 
 # Name of the program
-NAME	=	trap
+NAME	=	animal
 INC		=	-I./includes
 
 # Flags
@@ -13,9 +13,9 @@ OBJ_DIR	=	obj/
 
 # .cpp and .o files
 
-SRC		 =		ClapTrap.cpp \
-				ScavTrap.cpp \
-				FragTrap.cpp \
+SRC		 =		Animal.cpp \
+				Dog.cpp \
+				Cat.cpp \
 				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
