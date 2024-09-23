@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 08:12:18 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/23 10:52:18 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/23 16:03:07 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 	std::string const &getType() const;
 	Animal &operator=(Animal const &rhs);
 
-	virtual void makeSound() const;
+	virtual void makeSound() const = 0;
 };
 
 
