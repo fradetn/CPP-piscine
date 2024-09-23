@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 18:07:22 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/01 23:13:19 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/23 10:15:46 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	main(int argc, char **argv){
 		i = 1;
 		while (argv[i]){
 			s = argv[i];
-			std::cout << std::uppercase << s;
+			for (size_t j=0; j < s.length(); j++)
+				std::cout << (char)std::toupper(s[j]);
 			i++;
 		}
 		std::cout << std::endl;
