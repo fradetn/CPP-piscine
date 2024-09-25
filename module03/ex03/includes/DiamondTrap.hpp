@@ -17,6 +17,8 @@ public:
 
 	DiamondTrap &operator=(DiamondTrap const &rhs);
 	void displayStats(void);
+	using ScavTrap::attack;
+	void WhoAmI(void);
 };
 
 #endif

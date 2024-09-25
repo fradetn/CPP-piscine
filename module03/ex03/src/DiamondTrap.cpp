@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 13:54:45 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/25 10:57:33 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/25 22:49:40 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,14 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(src), FragTrap(src),
 	*this = src;
     std::cout << "DiamondTrap copy constructor called!" << std::endl;
 }
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), FragTrap(), ScavTrap() {
-    std::cout << "DiamondTrap parameter constructor called!" << std::endl;
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name) {
+    this->name = name;
+	this->ClapTrap::name = name + "_clap_name";
+	
+    FragTrap::_hitPoints = 100;
+    ScavTrap::_energyPoints = 50;
+    FragTrap::_attackDamage = 30;
+	std::cout << "DiamondTrap parameter constructor called!" << std::endl;
 }
 DiamondTrap::~DiamondTrap(){
     std::cout << "DiamondTrap destructeur called!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:26:17 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/21 17:19:18 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/25 13:57:23 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 
 	ScavTrap &operator=(ScavTrap const &rhs);
 
+	void attack(std::string const &target);
 	void guardGate();
 };
 
