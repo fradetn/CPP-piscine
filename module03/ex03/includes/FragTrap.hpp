@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 17:03:24 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/24 13:30:00 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/22 07:35:37 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/22 07:45:54 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "includes/Fixed.hpp"
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include "ClapTrap.hpp"
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	
-	return 0;
-}
+class FragTrap : public ClapTrap
+{
+private:
+	/* data */
+public:
+	FragTrap(void);
+	FragTrap(std::string name);
+	FragTrap(FragTrap const &src);
+	~FragTrap();
+
+	FragTrap &operator=(FragTrap const &rhs);
+
+	void highFiveGuys(void);
+};
+
+#endif

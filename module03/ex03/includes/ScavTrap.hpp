@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 17:03:24 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/24 13:30:00 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/21 07:26:17 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/21 17:19:18 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "includes/Fixed.hpp"
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+#include "ClapTrap.hpp"
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
-	
-	return 0;
-}
+class ScavTrap : public ClapTrap
+{
+private:
+	/* data */
+public:
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const &src);
+	~ScavTrap();
+
+	ScavTrap &operator=(ScavTrap const &rhs);
+
+	void guardGate();
+};
+
+#endif

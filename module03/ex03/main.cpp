@@ -5,25 +5,34 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/17 17:03:24 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/24 13:30:00 by nfradet          ###   ########.fr       */
+/*   Created: 2024/09/22 07:42:02 by nfradet           #+#    #+#             */
+/*   Updated: 2024/09/22 07:46:15 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "includes/Fixed.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void ) {
-	Fixed a;
-	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+	FragTrap jim;
+	FragTrap bob = FragTrap("Bob");
 
-	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
-	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
-	std::cout << b << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << std::endl;
 	
-	return 0;
+	std::cout << "Bob Hit points: " << bob.getHit() << std::endl;
+	std::cout << "Bob Energy: " << bob.getEnergy() << std::endl;
+	std::cout << "Bob Attack Dmg: " << bob.getAttackDmg() << std::endl;
+	
+	std::cout << std::endl;
+
+	jim.setName("Jim");
+	jim.highFiveGuys();
+	bob.attack("Jim");
+	jim.takeDamage(bob.getAttackDmg());
+
+	std::cout << std::endl;
+
+    return 0;
 }
