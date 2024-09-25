@@ -5,7 +5,7 @@ INC		=	-I./includes
 
 # Flags
 CC			=	clang++
-CPPFLAGS	=	-Wall -Werror -Wextra
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 # Directories
 VPATH   =   src 
@@ -16,6 +16,7 @@ OBJ_DIR	=	obj/
 SRC		 =		ClapTrap.cpp \
 				ScavTrap.cpp \
 				FragTrap.cpp \
+				DiamondTrap.cpp \
 				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)

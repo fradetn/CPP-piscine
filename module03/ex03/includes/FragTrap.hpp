@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:35:37 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/22 07:45:54 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/25 11:00:37 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap
+class FragTrap : virtual public ClapTrap
 {
 private:
 	/* data */
@@ -27,6 +27,7 @@ public:
 
 	FragTrap &operator=(FragTrap const &rhs);
 
+	void attack(std::string const & target);
 	void highFiveGuys(void);
 };
 

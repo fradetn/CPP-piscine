@@ -5,7 +5,7 @@ INC		=	-I./includes
 
 # Flags
 CC			=	clang++
-CPPFLAGS	=	-Wall -Werror -Wextra
+CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 # Directories
 VPATH   =   src 
