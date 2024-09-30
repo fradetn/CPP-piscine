@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:58:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/22 07:26:53 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:14:22 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ protected:
 
 public:
 	ClapTrap(void);
-	ClapTrap(std::string name);
+	ClapTrap(std::string _name);
 	ClapTrap(ClapTrap const &src);
 	~ClapTrap();
 
-	void setName(std::string name);
+	void setName(std::string _name);
 
 	std::string getName(void) const;
 	unsigned int getHit(void) const;

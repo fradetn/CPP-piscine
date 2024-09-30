@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:42:02 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/25 10:58:54 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:04:22 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,14 @@
 
 int main( void ) {
 	DiamondTrap diams("diams");
+	DiamondTrap d;
 
 	std::cout << std::endl;
 	
+	d.WhoAmI();
+	d.attack("test");
+	d.highFiveGuys();
+	diams.WhoAmI();
 	diams.displayStats();
 	diams.attack("test");
 	std::cout << std::endl;

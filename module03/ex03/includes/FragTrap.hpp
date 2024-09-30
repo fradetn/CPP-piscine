@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:35:37 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/25 22:46:27 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:12:22 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ private:
 	/* data */
 public:
 	FragTrap(void);
-	FragTrap(std::string name);
+	FragTrap(std::string _name);
 	FragTrap(FragTrap const &src);
 	~FragTrap();
 

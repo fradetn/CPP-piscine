@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:46:20 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/22 07:29:11 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/30 15:15:28 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ ClapTrap::ClapTrap(void) {
 	this->energy = 10;
 	this->attackDmg = 0;
 }
-ClapTrap::ClapTrap(std::string name) {
+ClapTrap::ClapTrap(std::string _name) {
 	std::cout << "ClapTrap parameter constructor called" << std::endl;
-	this->name = name;
+	this->name = _name;
 	this->hit = 10;
 	this->energy = 10;
 	this->attackDmg = 0;
@@ -39,8 +39,8 @@ ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-void ClapTrap::setName(std::string name) {
-	this->name = name;
+void ClapTrap::setName(std::string _name) {
+	this->name = _name;
 }
 
 std::string ClapTrap::getName(void) const{
