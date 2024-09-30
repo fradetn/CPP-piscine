@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+# define AANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Animal {
+class AAnimal {
  
 protected:
 	std::string type;
 
 public:
-	Animal(void);
-	Animal(Animal const &src);
-	virtual ~Animal();
+	AAnimal(void);
+	AAnimal(AAnimal const &src);
+	virtual ~AAnimal();
 
 	std::string const &getType() const;
-	Animal &operator=(Animal const &rhs);
+	AAnimal &operator=(AAnimal const &rhs);
 
 	virtual void makeSound() const = 0;
 };

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal(/* args */) {
+AAnimal::AAnimal(/* args */) {
 	this->type = "?type?";
-	std::cout << "Animal constructor" << std::endl;
+	std::cout << "AAnimal constructor" << std::endl;
 }
-Animal::Animal(Animal const &src) {
+AAnimal::AAnimal(AAnimal const &src) {
 	*this = src;
 }
-Animal::~Animal() {
-	std::cout << "Animal destructor" << std::endl;
+AAnimal::~AAnimal() {
+	std::cout << "AAnimal destructor" << std::endl;
 }
 
-std::string const &Animal::getType() const {
+std::string const &AAnimal::getType() const {
 	return (this->type);
 }
 
-Animal &Animal::operator=(Animal const &rhs) {
+AAnimal &AAnimal::operator=(AAnimal const &rhs) {
 	this->type = rhs.getType();
 	return (*this);
 }

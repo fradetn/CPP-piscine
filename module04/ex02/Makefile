@@ -5,7 +5,7 @@ INC		=	-I./includes
 
 # Flags
 CC			=	clang++
-CPPFLAGS	=	-Wall -Werror -Wextra -std=c++98
+CPPFLAGS	=	-Wshadow -Wall -Werror -Wextra -std=c++98
 
 # Directories
 VPATH   =   src 
@@ -13,7 +13,7 @@ OBJ_DIR	=	obj/
 
 # .cpp and .o files
 
-SRC		 =		Animal.cpp \
+SRC		 =		AAnimal.cpp \
 				Dog.cpp \
 				Cat.cpp \
 				Brain.cpp \

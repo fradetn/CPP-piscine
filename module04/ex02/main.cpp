@@ -6,18 +6,22 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:07:05 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/23 15:55:01 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/09/30 16:12:22 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
 int main()
 {
-	const Animal *j[10];
-	const Animal *k;
+	const AAnimal *j[10];
+	const AAnimal *k;
+	
+	// k = new AAnimal();
+	// delete k;
+
 	std::cout << "---------- constructors ----------" << std::endl;
 	for (int i = 0; i < 10; i++) {
 		if (i < 5)
@@ -29,7 +33,7 @@ int main()
 	
 	k = j[0];
 	std::cout << &k << std::endl;
-	std::cout << &j << std::endl;
+	std::cout << &j[0] << std::endl;
 
 	std::cout << std::endl;
 	
