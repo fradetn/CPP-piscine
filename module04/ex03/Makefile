@@ -13,11 +13,9 @@ OBJ_DIR	=	obj/
 
 # .cpp and .o files
 
-SRC		 =		Animal.cpp \
-				Dog.cpp \
-				Cat.cpp \
-				WrongAnimal.cpp \
-				WrongCat.cpp \
+SRC		 =		AMateria.cpp \
+				Ice.cpp \
+				Cure.cpp \
 				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
