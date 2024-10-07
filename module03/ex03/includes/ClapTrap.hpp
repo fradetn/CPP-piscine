@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:58:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/30 15:10:03 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:25:29 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 	ClapTrap(void);
 	ClapTrap(std::string _name);
 	ClapTrap(ClapTrap const &src);
-	~ClapTrap();
+	virtual ~ClapTrap();
 
 	void setName(std::string _name);
 

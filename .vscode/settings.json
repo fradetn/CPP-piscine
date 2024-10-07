@@ -50,5 +50,6 @@
 		"fstream": "cpp",
 		"cinttypes": "cpp"
 	},
-	"C_Cpp.errorSquiggles": "disabled"
+	"C_Cpp.errorSquiggles": "disabled",
+	"sonarlint.pathToCompileCommands": "${workspaceFolder}/module04/ex03/compile_commands.json"
 }

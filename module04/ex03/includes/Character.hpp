@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 11:40:28 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/02 16:06:55 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:01:03 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ class Character : public ICharacter{
 
 private:
     std::string name;
+	AMateria	*inventory[4];
+
 
 public:
     Character();
@@ -34,6 +36,8 @@ public:
     void equip(AMateria* m);
     void unequip(int idx);
     void use(int idx, ICharacter& target);
+
+	void showInventory() const;
 
     Character &operator=(Character const &rhs);
 };

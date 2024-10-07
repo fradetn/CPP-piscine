@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:00:22 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/02 16:00:22 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 16:25:07 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@
 
 class Ice : public AMateria
 {
-protected:
-    std::string type;
-
+	
 public:
     Ice();
     Ice(std::string const &_type);

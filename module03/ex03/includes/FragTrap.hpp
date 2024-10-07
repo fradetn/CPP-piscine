@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:35:37 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/30 15:12:22 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:31:19 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	FragTrap(void);
 	FragTrap(std::string _name);
 	FragTrap(FragTrap const &src);
-	~FragTrap();
+	virtual ~FragTrap();
 
 	FragTrap &operator=(FragTrap const &rhs);
 	void highFiveGuys(void);

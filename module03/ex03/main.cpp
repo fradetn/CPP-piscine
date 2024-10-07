@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:42:02 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/03 14:28:01 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:52:19 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int main( void ) {
 	std::cout << std::endl;
 	
 	d.WhoAmI();
+	d.displayStats();
 	d.attack("test");
 	d.highFiveGuys();
 	diams.WhoAmI();

@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 16:00:12 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/02 16:00:14 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 16:25:06 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@
 
 class Cure : public AMateria
 {
-protected:
-    std::string type;
 
 public:
     Cure();

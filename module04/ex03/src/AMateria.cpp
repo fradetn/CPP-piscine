@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/01 12:05:55 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/02 14:46:46 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 16:46:59 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ AMateria::AMateria(std::string const & _type) {
 }
 AMateria::AMateria(AMateria const & src) {
     *this = src;
+}
+AMateria::~AMateria() {
 }
 
 std::string const & AMateria::getType() const {

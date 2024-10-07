@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:34:30 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/30 15:12:46 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:51:14 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,13 @@ ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src){
     std::cout << "ScavTrap copy constructor called!" << std::endl;
 }
 ScavTrap::ScavTrap(std::string _name) : ClapTrap(_name){
-	this->name = _name;
 	this->hit = 100;
 	this->energy = 50;
 	this->attackDmg = 20;
     std::cout << "ScavTrap parameter constructor called!" << std::endl;
 }
 ScavTrap::~ScavTrap(){
-    std::cout << "ScavTrap destructeur called!" << std::endl;
+    std::cout << "ScavTrap destructor called!" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs){

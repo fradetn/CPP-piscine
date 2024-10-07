@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 07:26:17 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/30 15:12:28 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:31:29 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	ScavTrap(void);
 	ScavTrap(std::string _name);
 	ScavTrap(ScavTrap const &src);
-	~ScavTrap();
+	virtual ~ScavTrap();
 
 	ScavTrap &operator=(ScavTrap const &rhs);
 

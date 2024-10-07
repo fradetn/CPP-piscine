@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 07:36:32 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/30 15:12:16 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:55:06 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src){
     std::cout << "FragTrap copy constructor called!" << std::endl;
 }
 FragTrap::FragTrap(std::string _name) : ClapTrap(_name){
-	this->name = _name;
 	this->hit = 100;
 	this->energy = 100;
 	this->attackDmg = 30;

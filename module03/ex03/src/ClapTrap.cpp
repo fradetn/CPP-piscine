@@ -6,34 +6,22 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:46:20 by nfradet           #+#    #+#             */
-/*   Updated: 2024/09/30 15:10:55 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/03 17:37:42 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 
-ClapTrap::ClapTrap(void) {
+ClapTrap::ClapTrap(void) : name("default"), hit(10), energy(10), attackDmg(0) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
-	this->name = "default";
-	this->hit = 10;
-	this->energy = 10;
-	this->attackDmg = 0;
 }
-ClapTrap::ClapTrap(std::string _name) {
+ClapTrap::ClapTrap(std::string _name) : name(_name), hit(10), energy(10), attackDmg(0)  {
 	std::cout << "ClapTrap parameter constructor called" << std::endl;
-	this->name = _name;
-	this->hit = 10;
-	this->energy = 10;
-	this->attackDmg = 0;
 }
 ClapTrap::ClapTrap(ClapTrap const &src) {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
-	this->name = src.name;
-	this->hit = src.hit;
-	this->energy = src.energy;
-	this->attackDmg = src.attackDmg;
-
+	*this = src;
 }
 ClapTrap::~ClapTrap() {
 	std::cout << "ClapTrap destructor called" << std::endl;

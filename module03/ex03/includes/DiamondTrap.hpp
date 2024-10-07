@@ -5,7 +5,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 private:
 	std::string name;
@@ -13,11 +13,11 @@ public:
 	DiamondTrap(void);
 	DiamondTrap(std::string name);
 	DiamondTrap(DiamondTrap const &src);
-	~DiamondTrap();
+	virtual ~DiamondTrap();
 
 	DiamondTrap &operator=(DiamondTrap const &rhs);
 	void displayStats(void);
-	using ScavTrap::attack;
+	void attack(std::string const & target);
 	void WhoAmI(void);
 };
 

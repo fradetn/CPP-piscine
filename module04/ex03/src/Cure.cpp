@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 13:54:59 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/02 16:13:41 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/04 14:08:59 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::string const & Cure::getType() const {
 }
 AMateria* Cure::clone() const {
     AMateria *cure  = new Cure(this->getType());
-    return (cure);
+    return cure;
 }
 void Cure::use(ICharacter& target) {
     std::cout << "* heals " + target.getName() + "'s wounds *" << std::endl;
