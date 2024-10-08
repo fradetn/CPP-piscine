@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 11:45:57 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/04 20:49:42 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/08 14:31:38 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,15 @@ std::string const & Character::getName() const {
     return (this->name);
 }
 void Character::equip(AMateria* m) {
-	for (int i = 0; i < 4; i++) {
-		if (this->inventory[i] == m) {
-			std::cout << "Can't equip this, already in inventory" << std::endl;
-			return;
-		}
+	if (m->getIsEquiped() == true) {
+		std::cout << m->getType() << " already equiped" << std::endl;
+		return;
 	}
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i] == NULL) {
+			std::cout << "Materia " << m->getType() << " has been equiped" << std::endl;
 			this->inventory[i] = m;
+			this->inventory[i]->setIsEquiped(true);
 			return;
 		}
 	}
@@ -65,6 +65,8 @@ void Character::equip(AMateria* m) {
 void Character::unequip(int idx) {
 	for (int i = 0; i < 4; i++) {
 		if (i == idx && this->inventory[i] != NULL) {
+			std::cout << "Materia " << this->inventory[i]->getType() << " has been unequiped" << std::endl;
+			this->inventory[i]->setIsEquiped(false);
 			this->inventory[i] = NULL;
 			return;
 		}
@@ -82,6 +84,7 @@ void Character::use(int idx, ICharacter& target) {
 }
 
 void Character::showInventory() const {
+	std::cout << std::endl;
 	std::cout << this->name + "'s inventory: " << &this->name << std::endl;
 	for (int i = 0; i < 4; i++) {
 		if (this->inventory[i] != NULL)
@@ -89,6 +92,7 @@ void Character::showInventory() const {
 		else
 			std::cout <<"materia[" << i << "] : NOTHING" << std::endl;
 	}
+	std::cout << std::endl;
 }
 
 Character &Character::operator=(Character const &rhs) {

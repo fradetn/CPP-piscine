@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:07:05 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/04 20:53:17 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/08 14:50:20 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,18 +34,16 @@ int main()
 	std::cout << "clone : " << clone << std::endl;
 	jim.equip(ice);
 	jim.showInventory();
-	// bob.equip(ice);
+	bob.equip(ice);
 	bob.equip(cure);
 	bob.equip(clone);
 	bob.showInventory();
-	jim = bob;
+	jim = bob; // apres ca, ne plus utiliser ice
 	jim.showInventory();
 	bob.showInventory();
 	bob.unequip(0);
-	std::cout << std::endl;
 	bob.showInventory();
 	bob.equip(cure);
-	std::cout << std::endl;
 	bob.showInventory();
 
 	// delete ice;
