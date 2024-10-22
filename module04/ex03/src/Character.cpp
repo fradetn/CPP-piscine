@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 11:45:57 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/08 14:31:38 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/22 18:39:40 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ std::string const & Character::getName() const {
     return (this->name);
 }
 void Character::equip(AMateria* m) {
+	if (m == NULL)
+		return;
 	if (m->getIsEquiped() == true) {
 		std::cout << m->getType() << " already equiped" << std::endl;
 		return;

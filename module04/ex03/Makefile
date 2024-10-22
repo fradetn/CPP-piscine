@@ -1,6 +1,6 @@
 
 # Name of the program
-NAME	=	animal
+NAME	=	materia
 INC		=	-I./includes
 
 # Flags
@@ -14,6 +14,7 @@ OBJ_DIR	=	obj/
 # .cpp and .o files
 
 SRC		 =		AMateria.cpp \
+				MateriaSource.cpp \
 				Character.cpp \
 				Ice.cpp \
 				Cure.cpp \
