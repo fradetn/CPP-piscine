@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 17:07:05 by nfradet           #+#    #+#             */
-/*   Updated: 2024/10/22 18:35:32 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/10/24 17:34:36 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,18 @@ int main()
 	tmp = src->createMateria("ice");
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
-
 	me->equip(tmp);
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	me->showInventory();
+
 	ICharacter* bob = new Character("bob");
+	bob->equip(tmp);
+	me->unequip(2);
+	bob->equip(tmp);
+	bob->showInventory();
+	me->showInventory();
+	
 	me->use(0, *bob);
 	me->use(1, *bob);
 	delete bob;
@@ -38,37 +47,3 @@ int main()
 	delete src;
 	return 0;
 }
-// int main()
-// {
-// 	AMateria *ice;
-// 	AMateria *cure;
-// 	AMateria *clone;
-
-// 	Character bob = Character("Bob");
-// 	Character jim;
-// 	ice = new Ice("ice");
-// 	cure = new Cure();
-// 	clone = cure->clone();
-
-// 	std::cout << "cure  : " << cure << std::endl;
-// 	std::cout << "ice   : " << ice << std::endl;
-// 	std::cout << "clone : " << clone << std::endl;
-// 	jim.equip(ice);
-// 	jim.showInventory();
-// 	bob.equip(ice);
-// 	bob.equip(cure);
-// 	bob.equip(clone);
-// 	bob.showInventory();
-// 	jim = bob; // apres ca, ne plus utiliser ice
-// 	jim.showInventory();
-// 	bob.showInventory();
-// 	bob.unequip(0);
-// 	bob.showInventory();
-// 	bob.equip(cure);
-// 	bob.showInventory();
-
-// 	// delete ice;
-// 	// delete cure;
-// 	// delete clone;
-// 	return 0;
-// }
