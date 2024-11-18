@@ -13,7 +13,8 @@ OBJ_DIR	=	obj/
 
 # .cpp and .o files
 
-SRC		 =		Bureaucrat.cpp \
+SRC		 =		Bureaucrat.cpp	\
+				Form.cpp		\
 				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)

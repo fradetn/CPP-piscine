@@ -6,11 +6,12 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:46:20 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/13 14:21:01 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/18 19:24:40 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                          Constructors & operators                          */
@@ -49,7 +50,7 @@ std::string const Bureaucrat::getName(void) const {
 	return (this->name);
 }
 
-unsigned int Bureaucrat::getGrade(void) const {
+int Bureaucrat::getGrade(void) const {
 	return (this->grade);
 }
 
@@ -77,4 +78,14 @@ const char *Bureaucrat::GradeTooHighException::what() const throw() {
 
 const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade cannot be lower than 150");
+}
+
+void Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception & e) {
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+	}
 }

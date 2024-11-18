@@ -6,16 +6,17 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:58:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/13 14:16:37 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/18 19:25:09 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#pragma once
 
 #include <stdexcept>
 #include <iostream>
 #include <string>
+
+class Form;
 
 class Bureaucrat
 {
@@ -30,10 +31,11 @@ public:
 	~Bureaucrat();
 
 	std::string const getName(void) const;
-	unsigned int getGrade(void) const;
+	int getGrade(void) const;
 
 	void incrementGrade(void);
 	void decrementGrade(void);
+	void signForm(Form &form);
 
 	Bureaucrat & operator=(Bureaucrat const & rhs);
 
@@ -48,5 +50,3 @@ public:
 };
 
 std::ostream& operator<<(std::ostream &os, Bureaucrat const & obj);
-
-#endif

@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:58:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/13 14:16:37 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/18 19:25:21 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
 	~Bureaucrat();
 
 	std::string const getName(void) const;
-	unsigned int getGrade(void) const;
+	int getGrade(void) const;
 
 	void incrementGrade(void);
 	void decrementGrade(void);

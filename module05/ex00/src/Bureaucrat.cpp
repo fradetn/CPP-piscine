@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:46:20 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/13 14:21:01 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/18 19:25:33 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ std::string const Bureaucrat::getName(void) const {
 	return (this->name);
 }
 
-unsigned int Bureaucrat::getGrade(void) const {
+int Bureaucrat::getGrade(void) const {
 	return (this->grade);
 }
 
