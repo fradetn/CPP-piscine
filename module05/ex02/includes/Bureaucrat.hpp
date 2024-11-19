@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:58:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/18 19:25:09 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/19 15:39:47 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <string>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -35,7 +35,7 @@ public:
 
 	void incrementGrade(void);
 	void decrementGrade(void);
-	void signForm(Form &form);
+	void signForm(AForm &form);
 
 	Bureaucrat & operator=(Bureaucrat const & rhs);
 

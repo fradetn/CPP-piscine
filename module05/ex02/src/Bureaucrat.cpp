@@ -6,12 +6,12 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 15:46:20 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/18 19:24:40 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/19 15:39:39 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 /* -------------------------------------------------------------------------- */
 /*                          Constructors & operators                          */
@@ -80,7 +80,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw() {
 	return ("Grade cannot be lower than 150");
 }
 
-void Bureaucrat::signForm(Form &form) {
+void Bureaucrat::signForm(AForm &form) {
 	try {
 		form.beSigned(*this);
 		std::cout << this->getName() << " signed " << form.getName() << std::endl;

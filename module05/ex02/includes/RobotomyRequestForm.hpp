@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 16:55:13 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/19 16:55:15 by nfradet          ###   ########.fr       */
+/*   Created: 2024/11/19 16:55:21 by nfradet           #+#    #+#             */
+/*   Updated: 2024/11/19 17:02:41 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@
 // class AForm;
 class Bureaucrat;
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 private:
 	std::string target;
 public:
-	ShrubberyCreationForm(void);
-	ShrubberyCreationForm(std::string target);
-	ShrubberyCreationForm(ShrubberyCreationForm const &src);
-	~ShrubberyCreationForm();
+	RobotomyRequestForm(void);
+	RobotomyRequestForm(std::string target);
+	RobotomyRequestForm(RobotomyRequestForm const &src);
+	~RobotomyRequestForm();
 
-	ShrubberyCreationForm &operator=(ShrubberyCreationForm const &rhs);
+	RobotomyRequestForm &operator=(RobotomyRequestForm const &rhs);
 
 	void executeAction() const;
 };

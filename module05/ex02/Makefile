@@ -13,9 +13,11 @@ OBJ_DIR	=	obj/
 
 # .cpp and .o files
 
-SRC		 =		Bureaucrat.cpp			\
-				Form.cpp				\
-				ShrubberyCreateForm.cpp	\
+SRC		 =		Bureaucrat.cpp				\
+				AForm.cpp					\
+				ShrubberyCreationForm.cpp	\
+				RobotomyRequestForm.cpp		\
+				PresidentialPardonForm.cpp	\
 				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)

@@ -1,52 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreateForm.cpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:04:08 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/18 20:44:13 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/19 15:41:26 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "ShrubberyCreateForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreateForm::ShrubberyCreateForm(void) : 
-Form("Shrubbery creation form", 145, 137) {
+/* -------------------------------------------------------------------------- */
+/*                          Constructors & operators                          */
+/* -------------------------------------------------------------------------- */
+
+ShrubberyCreationForm::ShrubberyCreationForm(void) : 
+AForm("Shrubbery creation form", 145, 137) {
 	this->target = "default";
 }
 
-ShrubberyCreateForm::ShrubberyCreateForm(std::string _target) : 
-Form("Shrubbery creation form", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string _target) : 
+AForm("Shrubbery creation form", 145, 137) {
 	this->target = _target;
 }
 
-ShrubberyCreateForm::ShrubberyCreateForm(ShrubberyCreateForm const &src) :
-Form("Shrubbery creation form", 145, 137) {
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &src) :
+AForm("Shrubbery creation form", 145, 137) {
 	*this = src;
 }
 
-ShrubberyCreateForm::~ShrubberyCreateForm() {}
+ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
-ShrubberyCreateForm &ShrubberyCreateForm::operator=(ShrubberyCreateForm const &rhs) {
-	this->target = rhs.target
+ShrubberyCreationForm &ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs) {
+	this->target = rhs.target;
+	return (*this);
 }
 
-void ShrubberyCreateForm::execute(Bureaucrat const &executor) const {
-	if (this->getIsSigned() == false) {
-		throw Form::FormNotSignedException();
-		return;
-	}
-	else if (executor.getGrade() > this->getExecRequired()) {
-		throw Form::GradeTooLowException();
-		return;
-	}
+/* -------------------------------------------------------------------------- */
+/*                              Members functions                             */
+/* -------------------------------------------------------------------------- */
+
+void ShrubberyCreationForm::executeAction() const {
+    std::fstream file;
 	
-    std::ofstream file(this->target + "_shrubbery");
+	std::string filename = this->target + "_shrubbery";
+	file.open(filename.c_str(), std::fstream::out);
 	if (!file.is_open()) {
 		std::cerr << "Erreur : Impossible de creer le fichier" << this->target + "_shrubbery" << std::endl;
 		return;
