@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 14:58:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/19 15:39:47 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/20 14:36:23 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ public:
 
 	void incrementGrade(void);
 	void decrementGrade(void);
+
 	void signForm(AForm &form);
+	void executeForm(AForm const & form);
 
 	Bureaucrat & operator=(Bureaucrat const & rhs);
 

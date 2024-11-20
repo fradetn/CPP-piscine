@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:10:26 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/19 18:30:11 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/20 14:39:44 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int main( void ) {
     try {
 		jim.signForm(robot);
 		jim.signForm(home);
-        robot.execute(jim);
+        jim.executeForm(robot);
 		jim.signForm(pardon);
-        pardon.execute(jim);
+        jim.executeForm(pardon);
     }
     catch (std::exception & e) {
         std::cerr << e.what() << std::endl;
