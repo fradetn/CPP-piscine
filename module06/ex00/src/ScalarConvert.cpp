@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 15:53:14 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/24 20:51:50 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/11/25 16:03:23 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,5 +122,11 @@ void ScalarConvert::convert(std::string const &str) {
 
 		displayResult(toChar[0], toInt, toFloat, toDouble, toIntLong);
 		return;
+	}
+	else {
+		std::cout << "char: Non dissplayable" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: impossible" << std::endl;
+		std::cout << "double: impossible" << std::endl;
 	}
 }
