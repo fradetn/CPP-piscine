@@ -24,6 +24,11 @@ bool	isAllDigit(std::string const &str) {
 	return (true);
 }
 
+BitcoinExchange  &BitcoinExchange::operator=(BitcoinExchange const &rhs) {
+	(void) rhs;
+	return (*this);
+}
+
 bool isValidDate(std::string const & date) {
 	if (date.length() != 10) return false;
 	if (date[4] != '-' || date[7] != '-') return false;

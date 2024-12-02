@@ -20,6 +20,8 @@ public:
 	BitcoinExchange(std::ifstream &file);
 	~BitcoinExchange();
 
+	BitcoinExchange  &operator=(BitcoinExchange const &rhs);
+
 	void showMap();
 };
 
