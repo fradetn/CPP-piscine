@@ -1,0 +1,7 @@
+https://github.com/pasqualerossi/C-Plus-Plus/blob/main/C%2B%2B%20Module%2009/ex02/PmergeMe.hpp
+
+https://dev.to/emuminov/human-explanation-and-step-by-step-visualisation-of-the-ford-johnson-algorithm-5g91
+
+https://github.com/emuminov/cpp_modules/blob/main/cpp09/ex02/PmergeMe.hpp
+
+https://codereview.stackexchange.com/questions/116367/ford-johnson-merge-insertion-sort
