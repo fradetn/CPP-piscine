@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 15:59:42 by nfradet           #+#    #+#             */
-/*   Updated: 2024/11/26 16:45:35 by nfradet          ###   ########.fr       */
+/*   Updated: 2024/12/17 15:07:24 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ int main() {
 	identify(randomClass);
 	std::cout << std::endl << "----------identify with reference----------" << std::endl;
 	identify(*randomClass);
+	delete randomClass;
 	return (0);
 }
