@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 16:34:46 by nfradet           #+#    #+#             */
-/*   Updated: 2024/12/01 12:18:29 by nfradet          ###   ########.fr       */
+/*   Updated: 2025/01/26 00:53:53 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,13 @@ void Span::addNumber(int number) {
 		this->tab.push_back(number);
 }
 
-void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
 		size_t range = std::distance(begin, end);
 
-		if (this->tab.size() + range > this->capacity)
+		if (this->tab.size() + range > this->capacity) {
+			this->tab.insert(this->tab.end(), begin, begin + this->capacity);
 			throw MaximumSpanCapacityException();
+		}
 		this->tab.insert(this->tab.end(), begin, end);
 }
 
