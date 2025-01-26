@@ -5,7 +5,7 @@
 int main()
 {
 	std::cout << "------------Test with MutantStack------------" << std::endl;
-	
+
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -54,4 +54,3 @@ int main()
 	return 0;
 return 0;
 }
-

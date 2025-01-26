@@ -12,10 +12,10 @@ public:
 	~MutantStack(){}
 
 	MutantStack& operator=(const MutantStack& other) {
-	if (this != &other) {
-		std::stack<T, Container>::operator=(other);
-	}
-	return *this;
+		if (this != &other) {
+			std::stack<T, Container>::operator=(other);
+		}
+		return *this;
     }
 
 	typedef typename Container::iterator iterator;
