@@ -4,7 +4,7 @@ NAME	=	PmergeMe
 INC		=	-I./includes
 
 # Flags
-CC			=	clang++
+CC			=	c++
 CPPFLAGS	=	-Wshadow -Wall -Werror -Wextra -std=c++98
 
 # Directories
@@ -13,8 +13,8 @@ OBJ_DIR	=	obj/
 
 # .cpp and .o files
 
-SRC		 =		main.cpp \
-				PmergeMe.cpp
+SRC		 =		PmergeMe.cpp \
+				main.cpp
 
 OBJ		 =	$(SRC:%.cpp=$(OBJ_DIR)%.o)
 

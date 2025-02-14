@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:45:25 by nfradet           #+#    #+#             */
-/*   Updated: 2024/12/04 15:06:13 by nfradet          ###   ########.fr       */
+/*   Updated: 2025/02/14 17:12:43 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@
 #include <iostream>
 #include <algorithm>
 #include <stdexcept>
+
+# define DEFAULT	"\033[0m"
+# define RED		"\033[31m"
+# define GREEN		"\033[32m"
+# define YELLOW		"\033[33m"
+# define BLUE		"\033[34m"
+# define MAGENTA	"\033[35m"
+# define CYAN		"\033[36m"
+# define WHITE		"\033[37m"
+
+typedef std::vector<int>::iterator	vecIt;
 
 class PmergeMe
 {
@@ -33,37 +44,11 @@ public:
 
 	PmergeMe &operator=(PmergeMe const &rhs);
 
-	void vectorSort();
+	void vectorSort(vecIt first, vecIt last);
+	void vectorSort(vecIt begin, vecIt end, int recIdx);
 	void listSort();
 
-	template <typename T> 
-	void miSort(T& container, int pairLevel);
+	std::vector<size_t> generateInsertionOrder(size_t m);
 };
 
 bool getStringUntil(const std::string& input, std::string& result, char delimiter, size_t& startPos);
-
-template <typename T>
-T next(T it, int step) {
-	std::advance(it, step);
-	return (it);
-}
-		
-template <typename T>
-void PmergeMe::miSort(T& container, int pairLevel) {
-	typedef typename T::iterator Iterator;
-
-	// Le nombre de pairs possible
-	int pairNbr = container.size() / pairLevel;
-
-	//condition d'arret de la recursion
-	if (pairNbr < 2)
-		return;
-
-	bool isOdd = pairNbr % 2 == 1;
-
-	Iterator start = container.begin();
-	Iterator last = next(start, pairLevel * pairNbr);
-    Iterator end = next(last, -(isOdd * pairLevel));
-
-	std::cout << *start << " -> " << *last << " -> " << *end << std::endl;
-}

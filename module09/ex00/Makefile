@@ -4,7 +4,7 @@ NAME	=	btc
 INC		=	-I./includes
 
 # Flags
-CC			=	clang++
+CC			=	c++
 CPPFLAGS	=	-Wshadow -Wall -Werror -Wextra -std=c++98
 
 # Directories

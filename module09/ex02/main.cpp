@@ -6,7 +6,7 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 18:55:42 by nfradet           #+#    #+#             */
-/*   Updated: 2024/12/03 16:09:15 by nfradet          ###   ########.fr       */
+/*   Updated: 2025/02/13 19:34:58 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,3 +74,4 @@ int main(int argc, char **argv) {
 		std::cerr << e.what() << std::endl;
 	}
 }
+
