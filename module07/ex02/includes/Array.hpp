@@ -53,15 +53,8 @@ public :
         if (index >= this->n) {
             throw std::out_of_range("Index out of bounds");
         }
-        return this->array[index];        
+        return this->array[index];
     }
-
-    // const T& operator[](unsigned int index) const {
-    //     if (index >= this->n) {
-    //         throw std::out_of_range("Index out of bounds");
-    //     }
-    //     return this->array[index];
-    // }
 };
 
 #endif
