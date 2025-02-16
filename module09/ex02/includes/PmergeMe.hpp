@@ -6,13 +6,14 @@
 /*   By: nfradet <nfradet@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 15:45:25 by nfradet           #+#    #+#             */
-/*   Updated: 2025/02/14 17:12:43 by nfradet          ###   ########.fr       */
+/*   Updated: 2025/02/16 17:37:46 by nfradet          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <list>
+#include <ctime>
 #include <vector>
 #include <string>
 #include <cstdlib>
@@ -34,9 +35,10 @@ typedef std::vector<int>::iterator	vecIt;
 class PmergeMe
 {
 private:
+public:
 	std::vector<int> vec;
 	std::list<int> lst;
-public:
+
 	PmergeMe();
 	PmergeMe(PmergeMe const &src);
 	PmergeMe(std::string const &numbers);
@@ -46,9 +48,19 @@ public:
 
 	void vectorSort(vecIt first, vecIt last);
 	void vectorSort(vecIt begin, vecIt end, int recIdx);
-	void listSort();
+	void listSort(std::list<int>& list);
 
 	std::vector<size_t> generateInsertionOrder(size_t m);
 };
 
+void printList(const std::list<int>& lst);
 bool getStringUntil(const std::string& input, std::string& result, char delimiter, size_t& startPos);
+
+template <typename T>
+void printVector(const std::vector<T>& vec) {
+	if (vec.size() == 0)
+		std::cout << std::endl;
+	for (size_t i = 0; i < vec.size(); ++i) {
+		std::cout << vec[i] << (i == vec.size() - 1 ? "\n" : " ");
+	}
+}

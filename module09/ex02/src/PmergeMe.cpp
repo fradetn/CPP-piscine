@@ -3,15 +3,6 @@
 PmergeMe::PmergeMe() {
 }
 
-template <typename T>
-void printVector(const std::vector<T>& vec) {
-	if (vec.size() == 0)
-		std::cout << std::endl;
-	for (size_t i = 0; i < vec.size(); ++i) {
-		std::cout << vec[i] << (i == vec.size() - 1 ? "\n" : " ");
-	}
-}
-
 template <typename Iterator>
 void printVector(Iterator begin, Iterator end) {
 	if (end - begin <= 0)
@@ -37,12 +28,6 @@ PmergeMe::PmergeMe(std::string const &numbers) {
 		this->vec.push_back(num);
 		this->lst.push_back(num);
 	}
-	// printVector(this->vec);
-	// printList(this->lst);
-	// this->miSort(this->vec, 1);
-
-	this->vectorSort(this->vec.begin(), this->vec.end(), 1);
-	printVector(this->vec);
 }
 
 PmergeMe::PmergeMe(PmergeMe const &src) {
@@ -89,6 +74,44 @@ std::vector<size_t> PmergeMe::generateInsertionOrder(size_t m) {
     return order;
 }
 
+void PmergeMe::listSort(std::list<int>& list) {
+    if (list.size() <= 1) return;
+
+    std::list<int> S, L;
+    std::list<int>::iterator it = list.begin();
+
+    // Créer des paires et trier
+    while (it != list.end()) {
+        std::list<int>::iterator a = it++;
+        if (it == list.end()) {
+            S.splice(S.end(), list, a);
+            break;
+        }
+        std::list<int>::iterator b = it++;
+        if (*a > *b) std::swap(*a, *b);
+        S.splice(S.end(), list, a);
+        L.splice(L.end(), list, b);
+    }
+
+    // Trier récursivement L
+    listSort(L);
+
+    // Convertir S en vector pour l'accès indexé
+    std::vector<int> S_vec(S.begin(), S.end());
+    std::vector<size_t> order = generateInsertionOrder(S_vec.size());
+
+    // Insérer les éléments dans L
+    for (std::vector<size_t>::iterator it_order = order.begin(); it_order != order.end(); ++it_order) {
+        size_t idx = *it_order;
+        int elem = S_vec[idx];
+        std::list<int>::iterator pos = L.begin();
+        while (pos != L.end() && *pos < elem) ++pos;
+        L.insert(pos, elem);
+    }
+
+    list.swap(L);
+}
+
 void PmergeMe::vectorSort(vecIt first, vecIt last) {
     if (last - first <= 1) return;
 
@@ -104,13 +127,11 @@ void PmergeMe::vectorSort(vecIt first, vecIt last) {
     // Gérer la taille impaire
     if ((last - first) % 2 != 0) S.push_back(*(last - 1));
 
-	std::cout << std::endl;
     // Trier récursivement L
     vectorSort(L.begin(), L.end());
 
     // Générer l'ordre d'insertion et insérer
     std::vector<size_t> order = this->generateInsertionOrder(S.size());
-	printVector(order);
     for (std::vector<size_t>::iterator it_order = order.begin(); it_order != order.end(); ++it_order) {
         size_t idx = *it_order;
         std::vector<int>::iterator pos = std::lower_bound(L.begin(), L.end(), S[idx]);
@@ -120,6 +141,44 @@ void PmergeMe::vectorSort(vecIt first, vecIt last) {
     // Copier le résultat trié
     std::copy(L.begin(), L.end(), first);
 }
+
+// void merge_insertion_sort(std::list<int>& lst) {
+//     if (lst.size() <= 1) return;
+
+//     std::list<T> S, L;
+//     std::list<T>::iterator it = lst.begin();
+
+//     // Créer des paires et trier
+//     while (it != lst.end()) {
+//         std::list<int>::iterator a = it++;
+//         if (it == lst.end()) {
+//             S.splice(S.end(), lst, a);
+//             break;
+//         }
+//         std::list<int>::iterator b = it++;
+//         if (*a > *b) std::swap(*a, *b);
+//         S.splice(S.end(), lst, a);
+//         L.splice(L.end(), lst, b);
+//     }
+
+//     // Trier récursivement L
+//     merge_insertion_sort(L);
+
+//     // Convertir S en vector pour l'accès indexé
+//     std::vector<int> S_vec(S.begin(), S.end());
+//     std::vector<size_t> order = generate_insertion_order(S_vec.size());
+
+//     // Insérer les éléments dans L
+//     for (std::vector<size_t>::iterator it_order = order.begin(); it_order != order.end(); ++it_order) {
+//         size_t idx = *it_order;
+//     	int elem = S_vec[idx];
+//         std::list<int>::iterator pos = L.begin();
+//         while (pos != L.end() && *pos < elem) ++pos;
+//         L.insert(pos, elem);
+//     }
+
+//     lst.swap(L);
+// }
 
 void PmergeMe::vectorSort(vecIt first, vecIt last, int recIdx) {
 	std::cout << GREEN"Recursion Index : " << recIdx << DEFAULT << std::endl;
@@ -177,8 +236,4 @@ void PmergeMe::vectorSort(vecIt first, vecIt last, int recIdx) {
     // Copier le résultat trié
     std::copy(L.begin(), L.end(), first);
 	std::cout << std::endl;
-}
-
-void PmergeMe::listSort() {
-
 }
